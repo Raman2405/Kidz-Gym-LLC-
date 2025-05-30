@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidz Gym LLC - Fitness. Fun. Confidence. | Albany, NY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kidz-pink': '#FF6B9D',
+                        'kidz-yellow': '#FFD93D',
+                        'kidz-blue': '#4ECDC4',
+                        'kidz-purple': '#A8E6CF',
+                        'kidz-orange': '#FF8B94',
+                        'kidz-green': '#88D8B0'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@300;400;600;700;800&display=swap');
+        
+        body { font-family: 'Nunito', sans-serif; }
+        .fun-font { font-family: 'Fredoka One', cursive; }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.9) 0%, rgba(78, 205, 196, 0.9) 25%, rgba(255, 217, 61, 0.9) 50%, rgba(168, 230, 207, 0.9) 75%, rgba(255, 139, 148, 0.9) 100%),
+                        url('https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: 400% 400%, cover;
+            background-position: 0% 50%, center;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%, center; }
+            50% { background-position: 100% 50%, center; }
+            100% { background-position: 0% 50%, center; }
+        }
+        
+        #home .container {
+            padding-top: 8rem;
+        }
+
+        header {
+            z-index: 1000;
+        }
+
+        #home span.inline-block {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+        
+        .rainbow-text {
+            background: linear-gradient(45deg, #FF6B9D, #4ECDC4, #FFD93D, #A8E6CF, #FF8B94);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .bounce-animation {
+            animation: bounce 2s infinite;
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .wiggle {
+            animation: wiggle 2s linear infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 7% { transform: rotateZ(0); }
+            15% { transform: rotateZ(-15deg); }
+            20% { transform: rotateZ(10deg); }
+            25% { transform: rotateZ(-10deg); }
+            30% { transform: rotateZ(6deg); }
+            35% { transform: rotateZ(-4deg); }
+            40%, 100% { transform: rotateZ(0); }
+        }
+        
+        .blob {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: blob 7s ease-in-out infinite;
+        }
+        
+        @keyframes blob {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+            75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+        
+        .image-fallback {
+            background: linear-gradient(135deg, #FF6B9D, #4ECDC4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gradient-to-br from-purple-50 to-pink-50">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md shadow-xl fixed w-full top-0 z-50 border-b-4 border-kidz-pink">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-gradient-to-r from-kidz-pink to-kidz-blue rounded-full flex items-center justify-center mr-3 wiggle">
+                    <i class="fas fa-dumbbell text-white text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold fun-font rainbow-text">Kidz Gym LLC</h1>
+            </div>
+            
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="text-gray-700 hover:text-kidz-pink font-bold transition-all hover:scale-110">🏠 Home</a></li>
+                <li><a href="#about" class="text-gray-700 hover:text-kidz-blue font-bold transition-all hover:scale-110">ℹ️ About</a></li>
+                <li><a href="#gallery" class="text-gray-700 hover:text-kidz-yellow font-bold transition-all hover:scale-110">📸 Gallery</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-kidz-green font-bold transition-all hover:scale-110">📞 Contact</a></li>
+            </ul>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-kidz-pink">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md border-t hidden">
+            <ul class="px-4 py-2 space-y-2">
+                <li><a href="#home" class="block py-3 text-gray-700 hover:text-kidz-pink font-bold">🏠 Home</a></li>
+                <li><a href="#about" class="block py-3 text-gray-700 hover:text-kidz-blue font-bold">ℹ️ About</a></li>
+                <li><a href="#gallery" class="block py-3 text-gray-700 hover:text-kidz-yellow font-bold">📸 Gallery</a></li>
+                <li><a href="#contact" class="block py-3 text-gray-700 hover:text-kidz-green font-bold">📞 Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 text-6xl opacity-20 float-animation">🏃‍♂️</div>
+            <div class="absolute top-40 right-20 text-5xl opacity-20 bounce-animation" style="animation-delay: 0.5s;">⚽</div>
+            <div class="absolute bottom-40 left-20 text-7xl opacity-20 wiggle" style="animation-delay: 1s;">🤸‍♀️</div>
+            <div class="absolute bottom-20 right-10 text-4xl opacity-20 float-animation" style="animation-delay: 1.5s;">🏆</div>
+            <div class="absolute top-1/2 left-1/4 text-5xl opacity-20 bounce-animation" style="animation-delay: 2s;">💪</div>
+            <div class="absolute top-1/3 right-1/3 text-6xl opacity-20 wiggle" style="animation-delay: 2.5s;">🎯</div>
+        </div>
+        
+        <div class="container mx-auto px-4 text-center text-white relative z-10">
+            <div class="mb-6">
+                <span class="inline-block bg-white/40 backdrop-blur-md px-6 py-3 rounded-full text-lg font-bold mb-6 border-2 border-white/50 shadow-lg">
+                    📍 Albany, NY • Where Fun Meets Fitness!
+                </span>
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-tight fun-font">
+                <span class="block text-white drop-shadow-lg">Fitness.</span>
+                <span class="block text-kidz-yellow drop-shadow-lg">Fun.</span>
+                <span class="block text-kidz-green drop-shadow-lg">Confidence.</span>
+            </h1>
+            
+            <p class="text-2xl md:text-3xl mb-12 max-w-3xl mx-auto font-bold drop-shadow-lg">
+                🌟 Where Albany's kids discover their superpowers through movement, play, and endless smiles! 🌟
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <button class="bg-white text-kidz-pink px-10 py-5 rounded-full font-bold text-xl hover:bg-kidz-yellow hover:text-white transition-all transform hover:scale-110 shadow-2xl border-4 border-white">
+                    🚀 Start Your Adventure!
+                </button>
+                <button class="border-4 border-white text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-kidz-blue transition-all transform hover:scale-110 shadow-2xl">
+                    📞 Call Our Fun Squad!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-kidz-purple/20 to-kidz-blue/20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl md:text-6xl font-bold fun-font rainbow-text mb-8">
+                        About Kidz Gym LLC
+                    </h2>
+                    <div class="w-32 h-2 bg-gradient-to-r from-kidz-pink to-kidz-blue rounded-full mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="order-2 md:order-1">
+                        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 card-hover border-4 border-kidz-pink/20">
+                            <div class="flex justify-center mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-r from-kidz-green to-kidz-blue rounded-full flex items-center justify-center blob">
+                                    <i class="fas fa-heart text-white text-3xl"></i>
+                                </div>
+                            </div>
+                            
+                            <p class="text-2xl md:text-3xl text-gray-700 leading-relaxed font-bold text-center">
+                                🌈 Helping Albany's kids grow strong, active, and confident through movement and play! 🌈
+                            </p>
+                            
+                            <div class="mt-8 text-center">
+                                <div class="flex justify-center space-x-4">
+                                    <span class="text-4xl">🏃‍♂️</span>
+                                    <span class="text-4xl">💪</span>
+                                    <span class="text-4xl">🎉</span>
+                                    <span class="text-4xl">⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-1 md:order-2">
+                        <img src="imagess/img1.jpg" 
+                             alt="Kids playing and exercising in gym environment" 
+                             class="w-full h-96 rounded-3xl shadow-2xl object-cover card-hover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-96 rounded-3xl shadow-2xl card-hover image-fallback" style="display: none;">
+                            🏃‍♂️ Kids in Gym!
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-xl card-hover border-4 border-kidz-pink/20">
+                        <img src="imagess/image1.jpg" 
+                             alt="Kids doing gymnastics in gym" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 image-fallback" style="display: none;">🤸‍♀️</div>
+                        <div class="p-6">
+                            <div class="w-16 h-16 bg-kidz-blue rounded-full flex items-center justify-center mx-auto mb-4 -mt-12 relative z-10 shadow-lg border-4 border-white">
+                                <i class="fas fa-running text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 fun-font text-center">Active Fun</h3>
+                            <p class="text-gray-600 text-center font-semibold">Engaging activities that make fitness feel like the best game ever!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-xl card-hover border-4 border-kidz-blue/20">
+                        <img src="imagess/image2.webp" 
+                             alt="Kids building confidence through gym activities" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 image-fallback" style="display: none;">⭐</div>
+                        <div class="p-6">
+                            <div class="w-16 h-16 bg-kidz-orange rounded-full flex items-center justify-center mx-auto mb-4 -mt-12 relative z-10 shadow-lg border-4 border-white">
+                                <i class="fas fa-star text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 fun-font text-center">Build Confidence</h3>
+                            <p class="text-gray-600 text-center font-semibold">Programs designed to boost self-esteem and unleash inner superpowers!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-xl card-hover border-4 border-kidz-green/20">
+                        <img src="imagess/image3.jpg" 
+                             alt="Safe kids gym environment with supervision" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-48 image-fallback" style="display: none;">🛡️</div>
+                        <div class="p-6">
+                            <div class="w-16 h-16 bg-kidz-green rounded-full flex items-center justify-center mx-auto mb-4 -mt-12 relative z-10 shadow-lg border-4 border-white">
+                                <i class="fas fa-shield-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 fun-font text-center">Safe Environment</h3>
+                            <p class="text-gray-600 text-center font-semibold">A supportive space where kids can explore, grow, and be themselves!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-20 bg-gradient-to-r from-kidz-yellow to-kidz-orange">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-16 border-4 border-white">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 md:order-1">
+                            <div class="text-center mb-8">
+                                <h2 class="text-4xl md:text-5xl font-bold fun-font rainbow-text mb-6">
+                                    What Parents Say! 💬
+                                </h2>
+                                <div class="flex justify-center space-x-2 mb-6">
+                                    <span class="text-yellow-400 text-4xl">⭐</span>
+                                    <span class="text-yellow-400 text-4xl">⭐</span>
+                                    <span class="text-yellow-400 text-4xl">⭐</span>
+                                    <span class="text-yellow-400 text-4xl">⭐</span>
+                                    <span class="text-yellow-400 text-4xl">⭐</span>
+                                </div>
+                            </div>
+                            
+                            <blockquote class="text-2xl md:text-3xl text-gray-700 italic mb-8 leading-relaxed text-center font-bold">
+                                "Kidz Gym helped my child build strength, confidence, and a love for fitness — and they had a blast doing it!"
+                            </blockquote>
+                            
+                            <div class="flex items-center justify-center">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                     alt="Happy parent testimonial" 
+                                     class="w-16 h-16 rounded-full object-cover mr-4 border-4 border-kidz-blue"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="w-16 h-16 bg-gradient-to-r from-kidz-pink to-kidz-blue rounded-full flex items-center justify-center mr-4 text-3xl" style="display: none;">
+                                    👨‍👩‍👧‍👦
+                                </div>
+                                <div class="text-left">
+                                    <p class="font-bold text-gray-800 text-xl">Happy Albany Parent</p>
+                                    <p class="text-kidz-blue text-lg font-semibold">⭐ Kidz Gym Family ⭐</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-1 md:order-2">
+                            <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Happy kids playing together in gym" 
+                                 class="w-full h-96 rounded-2xl shadow-2xl object-cover card-hover"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-96 rounded-2xl shadow-2xl card-hover image-fallback" style="display: none;">
+                                👨‍👩‍👧‍👦 Happy Families!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gradient-to-br from-kidz-blue/20 to-kidz-purple/20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-bold fun-font rainbow-text mb-6">
+                    Our Amazing Kidz! 📸
+                </h2>
+                <p class="text-2xl text-gray-700 max-w-3xl mx-auto font-bold">
+                    🌟 See the fun, fitness, and confidence building happening every day! 🌟
+                </p>
+                <div class="w-32 h-2 bg-gradient-to-r from-kidz-pink to-kidz-blue rounded-full mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Image 1 - Kids Gymnastics -->
+                <img src="imagess/g1.jpg" 
+                     alt="Kids gymnastics and tumbling in gym" 
+                     class="rounded-2xl shadow-xl card-hover h-48 w-full object-cover border-4 border-white"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="rounded-2xl shadow-xl card-hover h-48 w-full border-4 border-white image-fallback" style="display: none;">🤸‍♀️</div>
+                
+                <!-- Image 2 - Kids Running -->
+                <img src="imagess/g2.webp" 
+                     alt="Kids running and cardio in gym" 
+                     class="rounded-2xl shadow-xl card-hover h-48 w-full object-cover border-4 border-white"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="rounded-2xl shadow-xl card-hover h-48 w-full border-4 border-white image-fallback" style="display: none;">🏃‍♂️</div>
+                
+                <!-- Image 3 - Kids Team Activities -->
+                <img src="imagess/g3.avif" 
+                     alt="Kids team building in gym environment" 
+                     class="rounded-2xl shadow-xl card-hover h-48 w-full object-cover border-4 border-white"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="rounded-2xl shadow-xl card-hover h-48 w-full border-4 border-white image-fallback" style="display: none;">🎯</div>
+                
+                <!-- Image 4 - Kids Gym Equipment -->
+                <img src="imagess/g4.webp" 
+                     alt="Kids using gym equipment safely" 
+                     class="rounded-2xl shadow-xl card-hover h-48 w-full object-cover border-4 border-white"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="rounded-2xl shadow-xl card-hover h-48 w-full border-4 border-white image-fallback" style="display: none;">🏆</div>
+                
+                <!-- Image 5 - Kids Strength Training -->
+                <img src="imagess/g5.jpg" 
+                     alt="Kids strength and coordination training" 
+                     class="rounded-2xl shadow-xl card-hover h-48 w-full object-cover border-4 border-white"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="rounded-2xl shadow-xl card-hover h-48 w-full border-4 border-white image-fallback" style="display: none;">💪</div>
+                
+                <!-- Image 6 - Kids Yoga/Stretching -->
+                <img src="imagess/g6.webp"
+                     alt="Kids yoga and stretching in gym" 
+                     class="rounded-2xl shadow-xl card-hover h-48 w-full object-cover border-4 border-white"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="rounded-2xl shadow-xl card-hover h-48 w-full border-4 border-white image-fallback" style="display: none;">🧘‍♀️</div>
+                
+                <!-- Image 7 - Kids Balance Training -->
+                <img src="imagess/g8.jpeg" 
+                     alt="Kids balance and coordination in gym" 
+                     class="rounded-2xl shadow-xl card-hover h-48 w-full object-cover border-4 border-white"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="rounded-2xl shadow-xl card-hover h-48 w-full border-4 border-white image-fallback" style="display: none;">🤾‍♀️</div>
+                
+                <!-- Image 8 - Kids Group Fitness -->
+                <img src="imagess/g8.jpg" 
+                     alt="Kids group fitness class in gym" 
+                     class="rounded-2xl shadow-xl card-hover h-48 w-full object-cover border-4 border-white"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="rounded-2xl shadow-xl card-hover h-48 w-full border-4 border-white image-fallback" style="display: none;">🎉</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-gray-900 to-purple-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-8xl">🌟</div>
+            <div class="absolute top-20 right-20 text-6xl">🎯</div>
+            <div class="absolute bottom-20 left-20 text-7xl">🏆</div>
+            <div class="absolute bottom-10 right-10 text-5xl">💫</div>
+        </div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-5xl md:text-6xl font-bold mb-8 fun-font">
+                Ready for the <span class="text-kidz-yellow">Adventure</span>? 🚀
+            </h2>
+            
+            <p class="text-2xl mb-12 max-w-3xl mx-auto font-bold">
+                🌈 Join the Kidz Gym family and watch your child discover the joy of fitness in Albany, NY! 🌈
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+                <button class="bg-gradient-to-r from-kidz-pink to-kidz-orange hover:from-kidz-orange hover:to-kidz-pink px-12 py-6 rounded-full font-bold text-2xl transition-all transform hover:scale-110 shadow-2xl border-4 border-white">
+                    🎯 Start Today!
+                </button>
+                
+                <a href="tel:+15184358082" class="bg-gradient-to-r from-kidz-green to-kidz-blue hover:from-kidz-blue hover:to-kidz-green px-12 py-6 rounded-full font-bold text-2xl transition-all transform hover:scale-110 shadow-2xl border-4 border-white inline-block">
+                    📞 Call: +1 518-435-8082
+                </a>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 max-w-4xl mx-auto border-2 border-white/20">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">📍</div>
+                        <h3 class="text-2xl font-bold mb-2 fun-font">Our Location</h3>
+                        <p class="text-kidz-yellow text-xl font-bold">Albany, NY</p>
+                        <p class="text-gray-300">Where the magic happens!</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">📞</div>
+                        <h3 class="text-2xl font-bold mb-2 fun-font">Call Us Now!</h3>
+                        <p class="text-kidz-green text-xl font-bold">+1 518-435-8082</p>
+                        <p class="text-gray-300">Ready to chat about fun!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-5 left-5 text-4xl">⭐</div>
+            <div class="absolute top-5 right-5 text-4xl">🎉</div>
+            <div class="absolute bottom-5 left-5 text-4xl">💪</div>
+            <div class="absolute bottom-5 right-5 text-4xl">🏆</div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <div class="w-16 h-16 bg-gradient-to-r from-kidz-pink to-kidz-blue rounded-full flex items-center justify-center mr-4 text-3xl">
+                        🏋️‍♀️
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold fun-font rainbow-text">Kidz Gym LLC</h3>
+                        <p class="text-kidz-yellow text-lg font-bold">Albany, NY 🌟</p>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/kidzFitnessNJ/" target="_blank" class="w-14 h-14 bg-gradient-to-r from-kidz-blue to-kidz-green hover:from-kidz-green hover:to-kidz-blue rounded-full flex items-center justify-center transition-all transform hover:scale-110 shadow-lg">
+                        <i class="fab fa-facebook-f text-white text-xl"></i>
+                    </a>
+                    <button class="w-14 h-14 bg-gradient-to-r from-kidz-pink to-kidz-purple hover:from-kidz-purple hover:to-kidz-pink rounded-full flex items-center justify-center transition-all transform hover:scale-110 shadow-lg">
+                        <i class="fab fa-instagram text-white text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-lg font-semibold">
+                    © 2025 Kidz Gym LLC 🌈 Helping Albany's kids grow strong, active, and confident! ⭐
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-white/95');
+                header.classList.remove('bg-white/90');
+            } else {
+                header.classList.add('bg-white/90');
+                header.classList.remove('bg-white/95');
+            }
+        });
+        
+        // CTA button handlers
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Start') || button.textContent.includes('Adventure')) {
+                button.addEventListener('click', () => {
+                    alert('🎉 Welcome to Kidz Gym LLC! 🎉\n\nCall us at +1 518-435-8082 to start your child\'s fitness adventure today!\n\n🌟 Let\'s make fitness fun! 🌟');
+                });
+            }
+        });
+        
+        // Add sparkle effect on hover for cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 30px rgba(255, 107, 157, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '';
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
